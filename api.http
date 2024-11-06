@@ -1,0 +1,35 @@
+###Recuperar todas las peliculas
+GET http://localhost:1234/movies
+
+###Recuperar una pelicula por id
+
+GET http://localhost:1234/movies/5ad1a235-0d9c-410a-b32b-220d91689a08
+
+###Recupera una pelicula por genero
+
+GET http://localhost:1234/movies?genre=FANTASY
+
+###Crear una pelicula
+
+POST http://localhost:1234/movies
+Content-Type: application/json
+
+{
+    "sql": "SELECT * FROM users",
+    "title": "Superman",
+    "year": 2010,
+    "director": "Joss Whedon",
+    "duration": 120,
+    "poster": "https://m.media-amazon.com/images/I/81BMmrwSFOL._AC_UF1000,1000_QL80_.jpg",
+    "genre": ["Action", "Adventure", "Sci-Fi"]
+}
+
+
+###Actualizar una pelicula por id
+PATCH http://localhost:1234/movies/dcdd0fad-a94c-4810-8acc-5f108d3b18c3
+Content-Type: application/json
+
+{
+    "title":"The",
+    "year":2002
+}
